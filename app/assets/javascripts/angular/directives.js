@@ -8,3 +8,9 @@ exchangeApp.directive('gsNavbar', function() {
 
   }
 })
+
+// exchangeApp.directive('gsUserImage', function() {
+//   return {
+//     templateUrl: 'partials/'
+//   }
+// })
