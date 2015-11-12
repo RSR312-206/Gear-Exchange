@@ -1,0 +1,22 @@
+
+<div class='container-fluid'>
+  <div class='row'>
+    <button class='btn btn-default btn-lg  col-lg-4 col-lg-offset-7'>Post a new Item</button>
+  </div><br>
+  <div class='row'>
+    <div class='col-lg-10 col-lg-offset-1'ng-repeat="item in items">
+      <div class='items'>
+      <img class='col-lg-3'height=300 width=300 ng-src="{{ item.image }}" />
+      <h2>{{ item.brand }}</h2>
+      <h4>{{ item.model }}</h4>
+      <h4>{{ item.price | currency }}</h4>
+        <div class='row'>
+          <button class='btn btn-warning btn-lg' type="submit">See offers and Requests </button><br>
+        </div>
+      </div>
+          <button class='btn btn-primary btn-lg col-lg-offset-10' type="submit">Find Items to Exchange</button>
+    </div>
+  </div>
+</div>
+
+

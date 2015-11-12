@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require angular/lib/angular.min
-//= require_tree ./angular/lib
-//= require_tree .
+//= require angular/lib/angular-resource.min
+//= require angular/lib/angular-route.min
+//= require angular/app
+//= require angular/controllers
+//= require angular/services
+//= require angular/directives
+
+
