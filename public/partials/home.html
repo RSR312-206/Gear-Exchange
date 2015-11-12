@@ -1,22 +1,52 @@
-
-<div class='container-fluid'>
+<!-- my exchange items and post a new item button -->
+<div class='container-fluid' id="mainPage">
   <div class='row'>
-    <button class='btn btn-default btn-lg  col-lg-4 col-lg-offset-7'>Post a new Item</button>
+    <button class='btn btn-warning btn-lg  col-lg-3 col-lg-offset-9'>Post a new Item</button>
   </div><br>
   <div class='row'>
-    <div class='col-lg-10 col-lg-offset-1'ng-repeat="item in items">
-      <div class='items'>
-      <img class='col-lg-3'height=300 width=300 ng-src="{{ item.image }}" />
-      <h2>{{ item.brand }}</h2>
-      <h4>{{ item.model }}</h4>
-      <h4>{{ item.price | currency }}</h4>
+    <div ng-repeat="item in items">
+      <div class='bg-default'>
+        <img  id="image" class='col-lg-3'height=300 width=300 ng-src="{{ item.image }}" />
+        <h2>{{ item.brand }}</h2>
+        <h4>{{ item.model }}</h4>
+        <h4>{{ item.price | currency }}</h4>
         <div class='row'>
-          <button class='btn btn-warning btn-lg' type="submit">See offers and Requests </button><br>
+          <button class='btn btn-default btn-lg col-lg-2 col-lg-offset-2' ng-model="showItem" ng-click="showItem = !showItem">See offers and Requests </button>
+          <button class='btn btn-default btn-lg'><a href="/#/{{ item.id }}/show">Find Items to Exchange</a></button>
         </div>
       </div>
-          <button class='btn btn-primary btn-lg col-lg-offset-10' type="submit">Find Items to Exchange</button>
+
+<!-- requested exchanges and offered exchanges hidden box -->
+      <div ng-show="showItem" class="row" id="exchangesAndOffers">
+        <div class="col-lg-6">
+          <h2>My Exchanges</h2>
+            <ul>
+              <li><img class='col-lg-3'height=100 width=100 ng-src="http://wwwgreeneridealcom.c.presscdn.com/wp-content/uploads/2014/01/trees.jpg" /></li>
+              <li>{{ item.brand }}</li>
+              <li>{{ item.model }}</li>
+              <li>{{ item.price }}</li>
+            </ul>
+          <button class='btn btn-warning'>Pending</button>
+        </div>
+        <div class="col-lg-6">
+          <h2 >Offered Exchanges</h2>
+            <ul>
+              <li><img class='col-lg-3'height=100 width=100 ng-src="http://wwwgreeneridealcom.c.presscdn.com/wp-content/uploads/2014/01/trees.jpg" /></li>
+              <li>{{ item.brand }}</li>
+              <li>{{ item.model }}</li>
+              <li>{{ item.price }}</li>
+            </ul>
+          <button ng-model="success" ng-click="success= !success" class='btn btn-success'>Accept</button>
+          <div ng-show="success" class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>Success!</strong> We've notified the ownder of this item that you'd like to trade.</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
 
 

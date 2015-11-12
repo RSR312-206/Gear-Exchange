@@ -1,0 +1,18 @@
+#navbar {
+  font-size: 20px;
+  height: 200px;
+  padding-top: 20px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg);
+  background-size: cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+#mainPage {
+  background-color: RGBA(139, 143, 142, .5)
+}
+
+#exchangesAndOffers {
+  margin: 30px;
+}
+

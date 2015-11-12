@@ -7,11 +7,16 @@ exchangeApp.config(['$httpProvider', function($httpProvider) {
 
 exchangeApp.config(["$routeProvider", function($routeProvider) {
   $routeProvider
-    .when('/',
-      { templateUrl: 'partials/home.html',
-      controller: 'ItemsController' })
+    .when('/', {
+        templateUrl: 'partials/home.html',
+      controller: 'ItemsController'
+    })
     .when('/items', {
       templateUrl: 'partials/home.html',
+      controller: 'ItemsController'
+    })
+    .when('/:id/show', {
+      templateUrl: 'partials/items',
       controller: 'ItemsController'
     });
 }]);

@@ -1,0 +1,11 @@
+<div>
+  {{ item.brand }}
+  {{ item.model }}
+  {{ item.price }}
+</div>
+
+<div ng-repeat="result in results">
+  {{ result.brand }}
+  {{ result.model }}
+  {{ result.price | currency }}
+</div>
