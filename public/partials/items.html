@@ -17,18 +17,18 @@
       <button class="btn btn-warning"type="submit">DELETE</button>
     </div>
     <div ng-show="editItem">
-      <form ng-submit="updateItem(currentItem)" ng-model="currentItem">
+      <form ng-submit="updateItem(currentItem)">
         <br>
         <label for="brand" class="control-label">Brand</label>
-          <input type="text" class="form-control" id="brand" ng-value="currentItem.brand">
+          <input type="text" class="form-control" id="brand" ng-model="currentItem.brand">
         <label for="model" class="control-label">Model</label>
-          <input type="model" class="form-control" id="model" ng-value="currentItem.model">
+          <input type="model" class="form-control" id="model" ng-model="currentItem.model">
         <label for="price" class="control-label">Price</label>
-          <input type="number" class="form-control" id="price" ng-value="currentItem.price">
+          <input type="number" class="form-control" id="price" ng-model="currentItem.price">
         <label for="textArea" class="control-label">Description</label>
         <textarea class="form-control" rows="3" id="textArea"></textarea>
         <span class="help-block"></span>
-        <button  ng-click="editItem = !editItem" class="btn btn-warning"type="submit">Save your changes</button>
+        <button ng-click="editItem = !editItem" class="btn btn-warning"type="submit">Save your changes</button>
         <button ng-click="editItem = !editItem"class="btn btn-default">Close without saving</button>
       </form>
     </div>
@@ -39,7 +39,7 @@
   <p>These items are within a $50 range of your item.<br>
     Browse the listings to discover which ones you want to trade</p>
 <div class="row">
-  <div class="col-lg-6" ng-repeat="result in results" id="filteredItems">
+  <div class="col-lg-6"ng-repeat="result in results" id="filteredItems">
     <h2>{{ result.brand }}</h2>
     <h3>{{ result.model }}</h3>
     <h3>{{ result.price | currency }}</h3>

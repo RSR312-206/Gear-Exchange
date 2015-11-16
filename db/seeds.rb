@@ -42,3 +42,34 @@ mid_item3 = Item.create({brand: "Norrøna", model: "Narvik Dri1 Insulated Short 
 small_item3 = Item.create({brand: "SmartWool", model: "Basic Footless II Tights",
   image: "http://content.backcountry.com/images/items/large/SWL/SWL00C1/BK.jpg",
   price: 40})
+
+large_item4 = Item.create({brand: "Bogner Fire + Ice", model: "Yvett-D Down Jacket - 600 Fill Power ",
+  image: "http://i.stpost.com/bogner-fire--plus--ice-yvett-d-down-jacket-600-fill-power-for-women-in-green~p~7028g_02~1500.2.jpg",
+  price: 320})
+large_item5 = Item.create({brand: "YES. Tadashi", model: "Fuse Pro-Model Snowboard",
+  image: "http://i.stpost.com/yes-tadashi-fuse-pro-model-snowboard-in-157-graphic~p~7503c_03~460.2.jpg",
+  price: 350})
+large_item6 = Item.create({brand: "Alico", model: "New Guide Mountaineering Hiking Boots - Leather",
+  image: "http://i.stpost.com/alico-new-guide-mountaineering-hiking-boots-leather-for-men-in-brown~p~64724_05~460.3.jpg",
+  price: 419})
+
+med_item4 = Item.create({brand: "Pearl Izumi ", model: "ELITE In-R-Cool® Short Cut Cycling Shorts ",
+  image: "http://i.stpost.com/pearl-izumi-elite-in-r-cool-short-cut-cycling-shorts-for-women-in-black-deep-lake~p~7996p_06~460.2.jpg",
+  price: 70})
+med_item5 = Item.create({brand: "Barbour", model: "Bonded Cotton Camera Bag",
+  image: "http://i.stpost.com/barbour-bonded-cotton-camera-bag-in-olive~p~8565x_01~460.2.jpg",
+  price: 199})
+med_item5 = Item.create({brand: "Marmot", model: "Boulder 35 Backpack",
+  image: "http://i.stpost.com/marmot-boulder-35-backpack-in-cinder~p~6333x_01~460.3.jpg",
+  price: 50})
+
+small_item4 = Item.create({brand: "Daniel Green", model: "Salena Knit Slippers",
+  image: "http://i.stpost.com/daniel-green-salena-knit-slippers-for-women-in-blue~p~8015d_01~460.2.jpg",
+  price: 2015})
+small_item5 = Item.create({brand: "Volkl", model: "Team Speed Tennis Racquet - Unstrung",
+  image: "http://i.stpost.com/volkl-team-speed-tennis-racquet-unstrung-for-men-and-women-in-black-green~p~8169v_01~460.3.jpg",
+  price: 30 })
+small_item6 = Item.create({brand: "Merrell", model: "Jungle Moc Shoes - Nubuck, Slip-Ons",
+  image: "http://i.stpost.com/merrell-jungle-moc-shoes-nubuck-slip-ons-for-infants-and-toddlers-in-gunsmoke~p~6780v_01~460.2.jpg",
+  price: 25})
+

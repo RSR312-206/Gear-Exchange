@@ -10,10 +10,12 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
-      render json: @items, status: :ok
+      @item.save
+      render json: @item, status: :ok
     else
-      render json: @items.errors, status: :unprocessable_entity
+      render json: @item.errors, status: :unprocessable_entity
     end
   end
 
@@ -31,6 +33,6 @@ class ItemsController < ApplicationController
   end
   private
   def item_params
-    params.require(:item).permit(:band, :model, :price, :image)
+    params.require(:item).permit(:id, :brand, :model, :price, :image, :updated_at, :created_at)
   end
 end
