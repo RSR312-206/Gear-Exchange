@@ -20,8 +20,16 @@ exchangeApp.controller("ShowController",
     $scope.results = res.data;
   });
 
-  $scope.updateItem = function() {
-     Item.upadteItem();
+  $scope.updateItem = function(currentItem) {
+    var id = currentItem.id;
+    console.log(id);
+    console.log(currentItem);
+    $http.put("/items/" + id, currentItem).success(function(data) {
+      console.log(data);
+    })
+    .error(function(data) {
+      console.log("error ");
+    });
   }
 
 }])

@@ -17,14 +17,14 @@
       <button class="btn btn-warning"type="submit">DELETE</button>
     </div>
     <div ng-show="editItem">
-      <form ng-submit="updateItem()">
+      <form ng-submit="updateItem(currentItem)" ng-model="currentItem">
         <br>
         <label for="brand" class="control-label">Brand</label>
-          <input type="text" class="form-control" id="brand" ng-model="currentItem.brand">
+          <input type="text" class="form-control" id="brand" ng-value="currentItem.brand">
         <label for="model" class="control-label">Model</label>
-          <input type="model" class="form-control" id="model" ng-model="currentItem.model">
+          <input type="model" class="form-control" id="model" ng-value="currentItem.model">
         <label for="price" class="control-label">Price</label>
-          <input type="number" class="form-control" id="price" ng-model="currentItem.price">
+          <input type="number" class="form-control" id="price" ng-value="currentItem.price">
         <label for="textArea" class="control-label">Description</label>
         <textarea class="form-control" rows="3" id="textArea"></textarea>
         <span class="help-block"></span>
