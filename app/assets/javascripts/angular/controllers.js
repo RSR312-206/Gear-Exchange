@@ -1,11 +1,28 @@
 exchangeApp.controller("ItemsController",
-  ['$scope', '$http', 'Item', "$routeParams", function($scope, $http, Item, $routeParams) {
+  ['$scope', '$http', function($scope, $http) {
 
-  $scope.items = Item.query();
+  $http.get("/items").then(function(res) {
+    console.log(res.data);
+    $scope.items = res.data;
+  });
+
+}])
+
+exchangeApp.controller("ShowController",
+["$scope", "$http", "$routeParams", "Item", function($scope, $http, $routeParams, Item) {
+
+  $http.get("/items/" + $routeParams.id).then(function(res) {
+    console.log(res.data);
+    $scope.currentItem = res.data;
+  })
 
   $http.get("/items/" + $routeParams.id + "/in_range").then(function(res) {
     $scope.results = res.data;
-    console.log($scope.results);
-  })
+  });
+
+  $scope.updateItem = function() {
+     Item.upadteItem();
+  }
 
 }])
+

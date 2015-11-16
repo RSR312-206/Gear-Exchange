@@ -8,11 +8,33 @@
   background-position: center center;
 }
 
-#mainPage {
-  background-color: RGBA(139, 143, 142, .5)
-}
-
 #exchangesAndOffers {
-  margin: 30px;
+  margin: 100px;
+  border: solid 2px black;
+  padding: 20px;
 }
 
+#itemOnShowPage {
+  margin: 100px;
+  border: solid 2px black;
+  padding: 20px;
+
+}
+
+#description {
+  padding: 40px;
+}
+
+#editDeleteButtons {
+  padding-left: 40px;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 200px;
+  width: 200px;
+}
+
+#filteredItems:hover  {
+  display: table-cell;
+  background: RGBA(77, 122, 128, 1);
+
+}

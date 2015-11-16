@@ -1,25 +1,23 @@
-exchangeApp.service('Item', ['$resource', function($resource) {
-  return $resource('/items/:id.json', {});
+exchangeApp.factory('Item', function($http) {
+  var Item = {};
+  Item.arr = [];
+
+  $http.get('/items').then(function(res) {
+    var items = res.data;
+    items.forEach(function(item) {
+      Item.arr.push(item);
+    })
+  })
 
 
-}])
 
-
-
-
-
-
-
-
-  // function filterItems(id) {
-  //   var rangeArray = [];
-  //   var myItem = value;
-  //   items.forEach(function(item) {
-  //     var range = item.price - myItem;
-  //     if (range > 50) {
-  //       item.price.push(rangeArray);
-  //     }
-  //     console.log(rangeArray)
-  //     return rangeArray;
-  //   });
-  // }
+  Item.editItem = function() {
+    $http.put("/items/" + item.id, item).success(function(data) {
+      console.log(data);
+    })
+    .error(function(data) {
+      console.log("error " + data);
+    });
+  }
+  return Item;
+})

@@ -17,6 +17,6 @@ exchangeApp.config(["$routeProvider", function($routeProvider) {
     })
     .when('/:id/show', {
       templateUrl: 'partials/items',
-      controller: 'ItemsController'
+      controller: 'ShowController'
     });
 }]);
