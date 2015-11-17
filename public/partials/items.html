@@ -14,7 +14,7 @@
     </div>
     <div id="editDeleteButtons">
       <button ng-model="editItem" ng-click="editItem = !editItem"class="btn btn-warning"type="submit">EDIT</button>
-      <button class="btn btn-warning"type="submit">DELETE</button>
+      <button ng-model="deleteItem" class="btn btn-warning"type="submit">DELETE</button>
     </div>
     <div ng-show="editItem">
       <form ng-submit="updateItem(currentItem)">
@@ -22,7 +22,7 @@
         <label for="brand" class="control-label">Brand</label>
           <input type="text" class="form-control" id="brand" ng-model="currentItem.brand">
         <label for="model" class="control-label">Model</label>
-          <input type="model" class="form-control" id="model" ng-model="currentItem.model">
+          <input type="text" class="form-control" id="model" ng-model="currentItem.model">
         <label for="price" class="control-label">Price</label>
           <input type="number" class="form-control" id="price" ng-model="currentItem.price">
         <label for="textArea" class="control-label">Description</label>
@@ -34,20 +34,21 @@
     </div>
   </div>
 </div>
-
-<h1>Exchangable Items</h1>
+<div class="jumbotron"id="jumbotron">
+  <h1>Exchangable Items</h1>
   <p>These items are within a $50 range of your item.<br>
     Browse the listings to discover which ones you want to trade</p>
+</div>
 <div class="row">
-  <div class="col-lg-6"ng-repeat="result in results" id="filteredItems">
+  <div class="col-lg-5"ng-repeat="result in results" id="filteredItems">
     <h2>{{ result.brand }}</h2>
     <h3>{{ result.model }}</h3>
     <h3>{{ result.price | currency }}</h3>
     <p><img src width=200 height=200 ng-src="{{result.image}}" /></p>
+    <button ng-model="success" ng-click="success= !success" class='btn btn-success col-lg-offset-7'>Send Trade Request</button>
+        <div ng-show="success" class="alert alert-dismissible alert-success">
+          <button ng-click="success= !success"type="button" class="close" data-dismiss="alert">x</button>
+          <strong>Success!</strong> We've notified the ownder of this item that you'd like to trade.</a>
+        </div>
   </div>
 </div>
-
-
-
-
-

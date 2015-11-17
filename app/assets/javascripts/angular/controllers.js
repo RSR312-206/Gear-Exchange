@@ -5,6 +5,25 @@ exchangeApp.controller("ItemsController",
     $scope.items = res.data;
   });
 
+  $http.get("/sierra_trading").then(function(res) {
+    $scope.prices = res;
+    console.log($scope.prices);
+
+  });
+
+  $scope.createNewItem = function(){
+    $http({
+      method  : 'POST',
+      url     : '/items',
+      data    : $scope.item,
+      })
+      .success(function(data, status) {
+        console.log(data);
+      })
+      .error(function(data, status) {
+        console.log("error");
+      });
+  };
 }])
 
 exchangeApp.controller("ShowController",
@@ -29,18 +48,4 @@ exchangeApp.controller("ShowController",
     });
   }
 
-}])
-
-exchangeApp.controller("NewItemController", ["$scope", "$http", "Item", function($scope, $http, Item ) {
-
-}])
-
-
-
-
-
-
-
-
-
-//if not items exist, send a note to the user
+}]);

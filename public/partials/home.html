@@ -5,25 +5,28 @@
     <div class="col-lg-3 col-lg-offset-5">
       Sort By:
       <select class="form-control" id="select"ng-model="category">
-        <option ng-value="">A to Z</option>
-        <option ng-value="">Z to A</option>
-        <option ng-value="">by Price</option>
-        <option ng-value="">Newest</option>
+        <option>A to Z</option>
+        <option>Z to A</option>
+        <option>by Price</option>
+        <option>Newest</option>
       </select>
     </div>
   </div><br>
 <!-- hidden form for a new item -->
   <div class="row">
     <div class="col-lg-6">
-      <form ng-show="newItem">
+      <form ng-show="newItem"ng-submit="createNewItem()">
         <label for="brand" class="control-label">Brand</label>
-          <input type="text" class="form-control" id="brand" ng-model="">
+          <input type="text" class="form-control" id="item" ng-model="item.brand">
         <label for="model" class="control-label">Model</label>
-          <input type="model" class="form-control" id="model" ng-model="">
+          <input type="model" class="form-control" id="item" ng-model="item.model">
         <label for="price" class="control-label">Price</label>
-          <input type="number" class="form-control" id="price" ng-model="">
+          <div ng-repeat="price in prices">
+            {{ price }}
+          </div>
+          <input type="number" class="form-control" id="item" ng-model="item.price">
         <label for="image" class="control-label">Image</label>
-          <input type="text" class="form-control" id="image" ng-model="">
+          <input type="text" class="form-control" id="item" ng-model="item.image">
         <label for="textArea" class="control-label">Description</label>
         <textarea class="form-control" rows="3" id="textArea"></textarea>
         <span class="help-block"></span>

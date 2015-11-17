@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'in_range'
     end
   end
+  resources :sierra_trading, only: [:index]
 end
 
 

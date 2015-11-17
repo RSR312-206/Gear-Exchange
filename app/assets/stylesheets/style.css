@@ -37,12 +37,21 @@
 
 #filteredItems:hover  {
   display: table-cell;
-  background: RGBA(77, 122, 128, 1);
+  background: RGBA(241, 157, 58, 1);
 
+}
+#filteredItems {
+  margin-top: 20px;
+  margin-left:70px;
+}
+
+#filteredItemsInfo {
+  margin: 90px;
 }
 
 #allItems {
-  padding-left: 40px;
+  margin: 20px;
+  padding-left: 200px;
   margin-bottom: 20px;
   padding-right: 40px;
 }
@@ -50,7 +59,16 @@
 #mainPageButtons {
   margin-bottom: 30px;
 }
-
+#logo {
+  width: 220px;
+  height: 150px;
+}
 .btn-lg {
   margin: 10px;
+}
+#jumbotron {
+  margin: 50px;
+  padding: 50px;
+  background-color: RGBA(102, 102, 102, 1);
+  color: RGBA(241, 157, 58, .8);
 }

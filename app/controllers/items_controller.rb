@@ -4,6 +4,15 @@ class ItemsController < ApplicationController
     render json: @items, status: :ok
   end
 
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      render json: @item, status: :created
+    else
+      render json: @item.errors, status: :unprocessable_entity
+    end
+  end
+
   def show
     @item = Item.find(params[:id])
     render json: @item, status: :ok
@@ -18,6 +27,10 @@ class ItemsController < ApplicationController
       render json: @item.errors, status: :unprocessable_entity
     end
   end
+  def destroy
+    @item.destroy
+    render json: {}, status: :ok
+  end
 
   def in_range
     @item = Item.find(params[:id])
@@ -31,8 +44,9 @@ class ItemsController < ApplicationController
     @results = Item.where(price: (low_range..high_range)).where.not(id: @item)
     render json: @results, status: :ok
   end
+
   private
   def item_params
-    params.require(:item).permit(:id, :brand, :model, :price, :image, :updated_at, :created_at)
+    params.require(:item).permit(:brand, :model, :price, :image)
   end
 end
