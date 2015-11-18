@@ -5,11 +5,23 @@ exchangeApp.controller("ItemsController",
     $scope.items = res.data;
   });
 
-  $http.get("/sierra_trading").then(function(res) {
-    $scope.prices = res;
-    console.log($scope.prices);
-
-  });
+  $scope.getPriceData = function(item) {
+    var modelInput = encodeURIComponent(item.model).toLowerCase();
+    console.log(modelInput);
+    $http({
+      method: "GET",
+      url: "/sierra_trading",
+      contentType: 'application/json',
+      params: {search_model_type: modelInput}
+    })
+      .success(function(data) {
+      $scope.price = data.Result[0].FinalPrice
+        console.log($scope.price);
+      })
+      .error(function(data) {
+        console.log('error');
+      })
+  }
 
   $scope.createNewItem = function(){
     $http({
@@ -24,6 +36,9 @@ exchangeApp.controller("ItemsController",
         console.log("error");
       });
   };
+
+
+
 }])
 
 exchangeApp.controller("ShowController",

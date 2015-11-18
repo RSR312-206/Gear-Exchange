@@ -1,4 +1,5 @@
 <div class="container-fluid">
+<!-- current Item box with edit and delete buttons -->
   <div class="row" id="itemOnShowPage">
     <div class="col-lg-3">
       <h1 ng-model="currentItem.brand">{{ currentItem.brand }}</h1>
@@ -16,24 +17,27 @@
       <button ng-model="editItem" ng-click="editItem = !editItem"class="btn btn-warning"type="submit">EDIT</button>
       <button ng-model="deleteItem" class="btn btn-warning"type="submit">DELETE</button>
     </div>
+<!-- hidden box for edit item form -->
     <div ng-show="editItem">
       <form ng-submit="updateItem(currentItem)">
-        <br>
         <label for="brand" class="control-label">Brand</label>
           <input type="text" class="form-control" id="brand" ng-model="currentItem.brand">
         <label for="model" class="control-label">Model</label>
           <input type="text" class="form-control" id="model" ng-model="currentItem.model">
         <label for="price" class="control-label">Price</label>
           <input type="number" class="form-control" id="price" ng-model="currentItem.price">
+        <label for="Image" class="control-label">Image</label>
+          <input type="text" class="form-control" id="brand" ng-model="currentItem.image">
         <label for="textArea" class="control-label">Description</label>
         <textarea class="form-control" rows="3" id="textArea"></textarea>
-        <span class="help-block"></span>
+          <span class="help-block"></span>
         <button ng-click="editItem = !editItem" class="btn btn-warning"type="submit">Save your changes</button>
         <button ng-click="editItem = !editItem"class="btn btn-default">Close without saving</button>
       </form>
     </div>
   </div>
 </div>
+<!-- exchangable items which are filtered -->
 <div class="jumbotron"id="jumbotron">
   <h1>Exchangable Items</h1>
   <p>These items are within a $50 range of your item.<br>
@@ -46,9 +50,9 @@
     <h3>{{ result.price | currency }}</h3>
     <p><img src width=200 height=200 ng-src="{{result.image}}" /></p>
     <button ng-model="success" ng-click="success= !success" class='btn btn-success col-lg-offset-7'>Send Trade Request</button>
-        <div ng-show="success" class="alert alert-dismissible alert-success">
-          <button ng-click="success= !success"type="button" class="close" data-dismiss="alert">x</button>
-          <strong>Success!</strong> We've notified the ownder of this item that you'd like to trade.</a>
-        </div>
+    <div ng-show="success" class="alert alert-dismissible alert-success">
+      <button ng-click="success= !success"type="button" class="close" data-dismiss="alert">x</button>
+      <strong>Success!</strong> We've notified the ownder of this item that you'd like to trade.</a>
+    </div>
   </div>
 </div>
