@@ -42,7 +42,7 @@ exchangeApp.controller("ItemsController",
 }])
 
 exchangeApp.controller("ShowController",
-["$scope", "$http", "$routeParams", "Item", function($scope, $http, $routeParams, Item) {
+["$scope", "$http", "$routeParams", function($scope, $http, $routeParams) {
 
   $http.get("/items/" + $routeParams.id).then(function(res) {
     $scope.currentItem = res.data;
