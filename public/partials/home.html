@@ -25,7 +25,7 @@
         <label for="image"class="control-label">Image</label>
           <input type="text" class="form-control" id="item" ng-model="item.image">
         <label for="textArea" class="control-label">Description</label>
-        <textarea class="form-control" rows="3" id="textArea"></textarea>
+        <input type="textarea" class="form-control" rows="3" id="textArea" ng-model="item.description">
         <span class="help-block"></span>
         <button ng-click="createNewItem()"class="btn btn-warning"type="submit">Create</button>
         <button ng-click="newItem = !newItem"class="btn btn-default">Close</button>
@@ -40,6 +40,7 @@
       <h2>{{ item.brand }}</h2>
       <h4>{{ item.model }}</h4>
       <h4>{{ item.price | currency }}</h4>
+      <p>{{ item.description }}</p>
       <div class='row'>
         <div class='col-lg-6' id="mainPageButtons">
           <button class='btn btn-default btn-lg'><a href="/#/{{ item.id }}/show">Find Items to Exchange</a></button>

@@ -9,9 +9,8 @@
     <div class="col-lg-3">
       <p><img width=200 height=200 ng-src=" {{currentItem.image}}" /></p>
     </div>
-    <div class='col-lg-3 col-lg-offset-1'id="description">
-      <p>These boots have take me to the moon and back. Not literally, but really solid
-        product. Would definitely trade for either a Mammut ice axe or one person ultralight tent</p>
+    <div class='col-lg-3 col-lg-offset-1'id="description"ng-model="currentItem.description">
+      <p>{{currentItem.description}}</p>
     </div>
     <div id="editDeleteButtons">
       <button ng-model="editItem" ng-click="editItem = !editItem"class="btn btn-warning"type="submit">EDIT</button>
@@ -29,7 +28,7 @@
         <label for="Image" class="control-label">Image</label>
           <input type="text" class="form-control" id="brand" ng-model="currentItem.image">
         <label for="textArea" class="control-label">Description</label>
-        <textarea class="form-control" rows="3" id="textArea"></textarea>
+        <textarea class="form-control" rows="3" id="textArea" ng-model="currentItem.description"></textarea>
           <span class="help-block"></span>
         <button ng-click="editItem = !editItem" class="btn btn-warning"type="submit">Save your changes</button>
         <button ng-click="editItem = !editItem"class="btn btn-default">Close without saving</button>
