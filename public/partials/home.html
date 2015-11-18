@@ -5,10 +5,8 @@
     <div class="col-lg-3 col-lg-offset-5">
       Sort By:
       <select class="form-control" id="select"ng-model="category">
-        <option ng-value="aToZ">A to Z</option>
-        <option ng-value="zToA">Z to A</option>
-        <option ng-value="price">by Price</option>
-        <option ng-value="newest">Newest</option>
+        <option ng-value="aToZ">COMING SOON</option>
+        <option ng-value="zToA">COMING SOON</option>
       </select>
     </div>
   </div><br>
@@ -22,15 +20,15 @@
         <label for="model" class="control-label">Model</label>
           <input type="text" class="form-control" id="item" ng-model="item.model">
           <button type="submit" ng-click="getPriceData(item)">Get Price Info</button>
-          {{price}}
-          <input type="text" id="item" ng-model="item.price"><br>
+          {{price | currency}}
+          <input type="text" id="{{price}}" ng-value="price" ng-model="item.price"><br>
         <label for="image"class="control-label">Image</label>
           <input type="text" class="form-control" id="item" ng-model="item.image">
         <label for="textArea" class="control-label">Description</label>
         <textarea class="form-control" rows="3" id="textArea"></textarea>
         <span class="help-block"></span>
         <button ng-click="createNewItem()"class="btn btn-warning"type="submit">Create</button>
-        <button ng-click="newItem = !newItem"class="btn btn-default">Cancel</button>
+        <button ng-click="newItem = !newItem"class="btn btn-default">Close</button>
       </form>
     </div>
   </div><br>

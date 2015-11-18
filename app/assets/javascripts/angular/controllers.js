@@ -35,10 +35,10 @@ exchangeApp.controller("ItemsController",
       .error(function(data, status) {
         console.log("error");
       });
+    $http.get("/items").then(function(res) {
+      $scope.items = res.data;
+    });
   };
-
-
-
 }])
 
 exchangeApp.controller("ShowController",
