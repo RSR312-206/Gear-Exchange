@@ -26,6 +26,8 @@ gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'excon'
+gem 'foreman'
+gem 'puma'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
